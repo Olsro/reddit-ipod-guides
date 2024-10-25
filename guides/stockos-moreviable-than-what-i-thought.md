@@ -92,6 +92,8 @@ Finally, you can now import the mp4 file into iTunes. Now you need to manually t
 
 # Cracked Clickwheel Games on the iPod Video
 
+(This was written before the massive Clickwheel Games Preservation Project)
+
 Vortex is very fun... and that's almost it. Bejeweled is very laggy and difficult to control. Zuma feels great at first but it is complicated to be precise and it start getting frustrating as the difficulty increases. Also, the game start to lag when there is too much animated moving balls on screen. Playing Zuma on this device just makes me want into installing the full game on a real PC and control the frog using a real mouse on a big screen to get the real experience.
 
 iPod Quiz is not really fun, questions can be too tricky and precise to find the answers even if you know pretty well your music library. The fun of this game depends on how the AI decides to ask you fun (and very possible) questions or when it decides to just punch you with impossible questions to make you lose all of your lives.
