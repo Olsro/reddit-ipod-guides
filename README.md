@@ -21,4 +21,6 @@ If you can and if you feel that my work deserves a few dollars, you can easily t
 
 [Building the ultimate and storage-optimized (but sounding very high quality) classic Apple legacy device music player. It's about iPods, the annoying AAC decoding bug (with solutions) and legacy Apple devices, and sharing my feedbacks, discoveries and experiences with all of this.](guides/iphone5-ios6-ultimate-music-player.md)
 
+[How to enable LTE (4G) on any iPhone 5 on iOS 6](guides/iphone5-lte.md)
+
 ## Thanks for reading ! You can also star this repo and follow it if you have found something valuable to you here.
