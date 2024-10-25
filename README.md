@@ -15,6 +15,8 @@ If you can and if you feel that my work deserves a few dollars, you can easily t
 
 [Some important facts about iPods that I wished I could know when I started getting into this hobby](guides/some-important-facts-about-ipods.md)
 
-[Building the ultimate and storage-optimized (but sounding very high quality) classic Apple legacy device music player. It's about iPods, the annoying AAC decoding bug (with solutions) and legacy Apple devices, and sharing my feedbacks, discoveries and experiences with all of this.](guides/iphone5-ios6-ultimate-music-player.md)
+[Some important facts about iPods that I wished I could know when I started getting into this hobby](guides/musepack-2024.md)
 
-## Thanks for reading ! You can also star this repo and follow it if you have found valuable info for you here.
+[Musepack : working with this music format in 2024 on a modern ARM64 machine](guides/iphone5-ios6-ultimate-music-player.md)
+
+## Thanks for reading ! You can also star this repo and follow it if you have found something valuable to you here.
