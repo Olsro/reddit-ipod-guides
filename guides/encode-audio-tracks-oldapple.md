@@ -1,4 +1,6 @@
 # Encoding audio tracks for any clickwheel iPod or below iOS 7 device with the best possible quality/disk space ratio
+*Date: 6 October 2024*
+
 Have you ever heared terrible crackling artifacts when listening to your self-converted lossy audio or videos on your iPod ? You are not mad; any iOS device below iOS 7 and any clickwheel iPod have issues with modernly encoded files. I reproduced it with modern AAC files but also with LAME encoded MP3s. This issue can be reduced by using very high bitrates, but it will sometimes still persist on some songs with less noticeable differences.
 
 I will focus on this paper on how to get the most quality for your device while keeping the storage impact as low as possible. ALAC and AIFF lossless are supported on the iPods but both have a huge impact on battery life and syncing those heavy files takes forever. The iPod was designed to play lossy files at reasonable bitrates (128kbps CBR from the store especially) and it is what they do the best especially on Stock OS.
@@ -37,7 +39,7 @@ Edit : I also created a .pkg to downgrade the QT related librairies on your curr
 My recommendation is to clean install Snow Leopard again and follow this steps :
 
 1. You can install it normally from the DVD. It can be 10.6.3 or 10.6.7 directly.
-2. You can still update on Internet using this version of MacOS to 10.6.8. You can apply all updated excepted iTunes updates and the Security Update from 2013-004. Don't apply this security update or it will update your QuickTime to a problematic version that introduced the encoding issues ! If something from this security update matters to you, you can install parts of it using Pacifist (https://www.charlessoft.com/pacifist\_olderversions.html) but it's old and very obsolete stuff anyway.
+2. You can still update on Internet using this version of MacOS to 10.6.8. You can apply all updated excepted iTunes updates and the Security Update from 2013-004. Don't apply this security update or it will update your QuickTime to a problematic version that introduced the encoding issues ! If something from this security update matters to you, you can install parts of it using Pacifist (https://www.charlessoft.com/pacifist_olderversions.html) but it's old and very obsolete stuff anyway.
 3. Now install iTunes 9.2.1 : [https://secure-appldnld.apple.com/iTunes9/061-8725.20100722.Bhnyt/iTunes9.2.1.dmg](https://secure-appldnld.apple.com/iTunes9/061-8725.20100722.Bhnyt/iTunes9.2.1.dmg) It is the last version that you can install to import your CDs and do your ALAC convert safely. Any iTunes version starting 10.0 does not call anymore the embedded QuickTime component on the OS and the encoding issue will be here. If you already have a more recent version of iTunes installed, it is possible to downgrade it easily by using Pacifist to force install it with administrator rights.
 4. Now you can just set the import settings. My recommended settings are 160 kbps VBR. Also, you should really enable "Error corrections" if you are willing to import CDs.
 
@@ -75,7 +77,7 @@ External players are also affected by the issue. I could even reproduced this is
 
 # What are exactly the affected versions of QT/iTunes ?
 
-There is some documentation here : [https://www.reddit.com/r/LegacyJailbreak/comments/1e5ox79/bulding\_the\_ultimate\_and\_storageoptimized\_but/](https://www.reddit.com/r/LegacyJailbreak/comments/1e5ox79/bulding_the_ultimate_and_storageoptimized_but/) On Windows, Quicktime 7.7.1 (and anything newer) is broken. I also reproduced the issue starting iTunes 10.0 on Windows. iTunes 9 could not install on my ARM64 virtual machine but this version will probably be OK. But on Windows, I prefer to just use QuickTime 7.6.6 and do all the converts with Foobar2000 which is great at preserving and processing the metadata of the music files.
+There is some documentation here : [https://www.reddit.com/r/LegacyJailbreak/comments/1e5ox79/bulding_the_ultimate_and_storageoptimized_but/](https://www.reddit.com/r/LegacyJailbreak/comments/1e5ox79/bulding_the_ultimate_and_storageoptimized_but/) On Windows, Quicktime 7.7.1 (and anything newer) is broken. I also reproduced the issue starting iTunes 10.0 on Windows. iTunes 9 could not install on my ARM64 virtual machine but this version will probably be OK. But on Windows, I prefer to just use QuickTime 7.6.6 and do all the converts with Foobar2000 which is great at preserving and processing the metadata of the music files.
 
 # What if I do not hear any strange issues with my modernly encoded files ?
 

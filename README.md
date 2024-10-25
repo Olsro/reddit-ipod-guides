@@ -7,6 +7,8 @@ All my knowledge is shared publicly. I want to avoid gate-keeping of the knowled
 If you can and if you feel that my work deserves a few dollars, you can easily tip me on Patreon to support it which encourages me to pursue this activity and even sometimes give private additional individual helps when I can to anyone: https://www.patreon.com/Olsro
 
 # List of the available guides
+*Guides are ordered descendently by release date.*
+
 [Encoding audio tracks for any clickwheel iPod or below iOS 7 device with the best possible quality/disk space ratio](guides/encode-audio-tracks-oldapple.md)
 
 ## Thanks for reading ! You can also star this repo and follow it if you have found valuable info for you here.
