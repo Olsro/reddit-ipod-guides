@@ -1,4 +1,4 @@
-# Public Archive of all of my iPod-related Reddit Guides
+# Centralized and proper archive of all of my iPod-related Reddit Guides
 All formatted in an open format: the markdown. Feel free to clone this whole repo so you can get access to those files locally and make another backup of it.
 
 Also, some of those guides are slightly improved/reworded from here.
