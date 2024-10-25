@@ -1,5 +1,5 @@
 # Some important facts about iPods that I wished I could know when I started getting into this hobby
-*Date: 12 September 2024*
+*Date: 12 September 2024, last edited: 25 October 2024*
 
 Hello all !
 
@@ -32,6 +32,7 @@ Here again to share some thoughts, I hope those can be helpful for someone here 
 * MP3tag is a good tool to process cover arts in batch and to do change in batch in MP3Tags
 * With a CF card, I have issues with the stability of Disk Mode only on my iPod Video. It sometimes freeze on the PC (and on the iPod itself I don't see anymore any kind of activity) so I cannot continue copying/see the files until I reconnect. But if I boot completely the Stock OS and let it connect as a disk, it's perfectly stable from there.
 * I documented many things about a Rockbox iPod Mini setup here, there is many precise infos on it that you may find helpful : [https://www.reddit.com/r/ipod/comments/1ebxjur/ipod\_mini\_sharing\_thoughts\_and\_tricks\_on\_daily/](https://www.reddit.com/r/ipod/comments/1ebxjur/ipod_mini_sharing_thoughts_and_tricks_on_daily/)
+* If you sync your Music with iTunes, creating the database will be much faster on Rockbox (for my library, it takes 20 minutes compared to one hour) because iTunes is creating very short paths on the file system, which is a very optimized and storage efficient way to organize the music. If your music is properly tagged, navigation using the Rockbox database is a lot of pleasure.
 
 # Support me on Patreon
 
