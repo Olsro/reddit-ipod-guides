@@ -1,5 +1,5 @@
 # iPod Mini : sharing thoughts and tricks on daily driving it !
-*Date: 25 July 2024, last edited: 25 October 2024*
+*Date: 25 July 2024, last edited: 27 October 2024*
 
 # Motivation to write this
 
@@ -79,6 +79,7 @@ Here is some advantages I found on using Rockbox :
 * Very fast boot time especially with a lot of songs. Rockbox just need a few seconds to cache the database in RAM and while it is doing it at boot, you can already start to navigate and even play a song without any issue during the process.
 * Customization. A lot of possible customization.
 * You get the ability to search for songs in your big library directly from your ipod when you need. I advise you strongly to enable morse search, so it is even better to type letters conveniently with only the center button of your clickwheel.
+* Gapless music playback
 * Does not remove the stock OS, it's dual boot
 
 # Thoughts about stock OS
