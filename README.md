@@ -11,6 +11,8 @@ If you can and if you feel that my work deserves a few dollars, you can easily t
 # List of all available guides
 *Guides are ordered descendently by their release date.*
 
+[Rockbox does support smart playlists (and it's awesome)](guides/rockbox-smart-playlists.md)
+
 [Encoding audio tracks for any clickwheel iPod or below iOS 7 device with the best possible quality/disk space ratio](guides/encode-audio-tracks-oldapple.md)
 
 [Stock OS is more viable and fun than what I thought](guides/stockos-moreviable-than-what-i-thought.md)
