@@ -1,5 +1,5 @@
 # Encoding audio tracks for any clickwheel iPod or below iOS 7 device with the best possible quality/disk space ratio
-*Date: 6 October 2024*
+*Date: 13 December 2024*
 
 Have you ever heared terrible crackling artifacts when listening to your self-converted lossy audio or videos on your iPod ? You are not mad; any iOS device below iOS 7 and any clickwheel iPod have issues with modernly encoded files. I reproduced it with modern AAC files but also with LAME encoded MP3s. This issue can be reduced by using very high bitrates, but it will sometimes still persist on some songs with less noticeable differences.
 
@@ -13,22 +13,31 @@ Consider that if you find one problematic track, many more are also affected eve
 
 # Windows setup (the easiest and most powerful method is here)
 
-We are going to setup a powerful music convert environment here to mass (and in a multithreaded fashion) convert any kind of samples to your settings.
+We are going to setup a powerful music convert environment here to mass (and in a multithreaded fashion) convert any kind of samples to your settings. You now (thanks to an update of this guide) don't even need to have iTunes or QuickTime installed on your computer for this to work, or any Apple software.
 
-1. Remove any installed versions of QuickTime, iTunes, and Apple softwares installed in your machine.
-2. Install QuickTime 7.6.6 : [http://www.oldversion.fr/windows/quicktime-7-6-6](http://www.oldversion.fr/windows/quicktime-7-6-6)
-3. Install the latest Foobar2000 version (you can even install the ARM64 version if your machine is an ARM64 one) : [https://www.foobar2000.org/download](https://www.foobar2000.org/download) If you want to sync your iPod using Foobar2000 rather than iTunes, you must install the x86 version
-4. Install the Foobar2000 encoders pack : [https://www.foobar2000.org/encoderpack](https://www.foobar2000.org/encoderpack)
-5. Get the latest version of Qaac [https://github.com/nu774/qaac/releases](https://github.com/nu774/qaac/releases) and copy the x86 files (even if your machine is a 64 bits or ARM64 because QuickTime 7.6.6 is always a 32 bits program) to "foobar installation folder/encoders". Replace any existing files.
-6. You should now be able to do the converts directly from the Foobar2000 UI. It is easy to do on Foobar2000, the UI is straightforward.
-7. Then you can copy the converted files and import those on your favourite iTunes version. Or you can do everything within Foobar by using this great plug-in : [https://yuo.be/ipod-manager](https://yuo.be/ipod-manager)
+1. Install the latest Foobar2000 version (you can even install the ARM64 version if your machine is an ARM64 one) : [https://www.foobar2000.org/download](https://www.foobar2000.org/download) If you want to sync your iPod using Foobar2000 rather than iTunes, you must install the x86 version
+2. Install the Foobar2000 encoders pack : [https://www.foobar2000.org/encoderpack](https://www.foobar2000.org/encoderpack)
+3. Install the QuickTime 7.6.6 portable encoder that I provide for convenience to integrate directly with Foobar2000. If you don't trust me, you can check the SHA256/signatures of the files, and even make yourself your own portable encoder files by using the ```qt-2015-makeportable.cmd``` file that I provide in this archive. Copy and replace the unzipped content of [encode-audio-tracks-oldapple/foobarencoders.7z](encode-audio-tracks-oldapple/foobarencoders.7z) inside the folder ```foobar installation folder/encoders```. Replace any existing files if it asks to.
+4. Inside the ```foobar installation folder/encoders``` folder, rename ```refalac64.exe``` to ```disabledrefalac64.exe``` and ```qaac64.exe``` to ```disabledqaac64.exe``` because we want Foobar2K to use our 32 bits version that will use the 32 bits QuickTime binaries. QuickTime 7.6.6 was compiled only in 32 bits to convert music files (and qaac architecture need to match with the arch of QTFiles).
+5. You should now be able to do the converts directly from the Foobar2000 UI: 
+	1) Scan some (lossless if possible) music to convert. Click on ```Library``` (located in the top menu of the app) then click on ```Configure```, a new window will appear. On the left of this window, click on ```Media Library``` then you can add your ```Music folders``` by clicking the adequate ```Add...``` button. Compared to iTunes, Foobar2K will scan everything, even FLAC files, and will be able to convert from them. Now that your library is scanned into Foobar2000, you can close this window with the ```OK``` button.
+	2) In the dropdown view (bottom-left of the window), select ```artist/album```
+	3) Now right-click on ```All music``` then select ```Convert``` then select ```...```
+	4) Click on ```Output format``` then double-click on ```AAC (Apple)```
+	5) Bit rate mode must be: ```Constrained VBR``` and the quality ```128 kbps``` or ```160 kbps```. If you really need to save disk space, you can go down to 96 kbps (but it will not feel transparent enough all time). Any bitrate more than 128kbps will give diminishing returns perceptually more you increase the bitrate.
+	6) Now click ```Ok``` to close the encoder configuration window, then click ```Back```. In ```Output format```, you should now see ```AAC (Apple), CVBR```
+	7) Now click on ```Destination``` then check ```Convert each track to an individual file``` (should be already checked) then put this pattern: ```%album artist%/%album%/%filename%``` which will be clean, simple and without conflicts if your music is properly tagged.
+	8) Now click on ```Back```; the new destination pattern should appear under the ```Destination``` clickable link. You can now ```Save <<``` your new preset with a custom name so you can re-use it anytime later.
+	9) Now you can ```Load >>``` your preset anytime you want then click on the ```Convert``` button to start converting the music files into the destination folder of your choice.
+
+6. Then you can copy the converted files and import these on your favourite iTunes version. Or you can do everything within Foobar (x86 version only) by using this great plug-in : [https://yuo.be/ipod-manager](https://yuo.be/ipod-manager)
 
 Recommended settings :
 
-* For an audio tracks of a video content : 160kbps CBR (Constant BitRate). It is the maximum supported by iPods in this case. Never use VBR here, I tried it and I had random colored ugly artifacts during video playback on my 5.5G iPod Video. To get an audio track from a MKV, use this : [https://www.videohelp.com/software/Inviska-MKV-Extract](https://www.videohelp.com/software/Inviska-MKV-Extract) Then you can merge the AAC file to an MKV using MKVToolnix : [https://mkvtoolnix.download/](https://mkvtoolnix.download/) then you can finally convert the mkv file to mp4 with AAC passthrough using Handbrake. You can download my Handbrake 240p profile here : [https://pastebin.com/6UPhe6xK](https://pastebin.com/6UPhe6xK) (call it "Apple 240p30.json")
+* For an audio tracks of a video content : 160kbps CBR (Constant BitRate). It is the maximum supported by iPods in this case. Never use VBR here, I tried it and I had random colored ugly artifacts during video playback on my 5.5G iPod Video. To get an audio track from a MKV, use this : [https://www.videohelp.com/software/Inviska-MKV-Extract](https://www.videohelp.com/software/Inviska-MKV-Extract) Then you can merge the AAC file to an MKV using MKVToolnix : [https://mkvtoolnix.download/](https://mkvtoolnix.download/) then you can finally convert the mkv file to mp4 with AAC passthrough using Handbrake. You can download my Handbrake 240p profile here (confirmed working with both iPod Videos and Classics): [encode-audio-tracks-oldapple/Apple240p30.json](encode-audio-tracks-oldapple/Apple240p30.json)
 * For music : 128kbps CVBR or 160kbps CVBR.
 
-# Mac OS X setup
+# Mac OS X setup (not recommended, less flexibility, and iTunes can't even convert in a multi-threaded fashion)
 
 Snow Leopard (10.6) seems to be the last version to have a non-affected AAC encoder. But if you already applied all updates on your current installation, you are already screwed. Mac OS X is much more annoying than Windows about this, because QuickTime's framework is deeply embedded inside the OS itself. Also, Mac OS X does not have a very powerful tool like Foobar2000 on Windows to mass-convert from any type of files using the QuickTime encoded to mass-produce files with a multithreaded fashion, unfortunately.
 
