@@ -72,9 +72,11 @@ The AAC encoder evolved a lot to solve issues between 2000 and 2010. Using one o
 
 # Can this help if my iPod is skipping songs ?
 
-Maybe. Those crackles may come from the inability of your device to correctly decode the modern files in some way. Using the product how it was intended reduces the risk of strange issues overall which includes skipping. If it still skips songs, check the sampling rate, it should be no more than 44,1 KHz for music content and never more than 48 KHz for the audio track of video content.
+Yes. Those crackles may come from the inability of your device to correctly decode the modern files in some way. Using the product how it was intended reduces the risk of strange issues overall which includes skipping. If it still skips songs, check the sampling rate, it should be no more than 44,1 KHz for music content and never more than 48 KHz for the audio track of video content.
 
 I tried to use my 3 CF-modded iPods (4G, Video 5.5G, Mini 2G) on their Stock OS and never had any issues of this kind with those legacy encoded AAC files. If your iPod is SD modded with SanDisk SD cards, you may try some other SD brand with it.
+
+A Redditor confirmed to me that following my guide compared to using modernly encoded (with MediaHuman) mp3 files completely fixes all skipped songs issues he had with his iPod Video, by using the same SD card.
 
 # What if I don't care about Stock OS and only use Rockbox ?
 
