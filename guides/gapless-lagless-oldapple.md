@@ -1,6 +1,8 @@
 ﻿# Gapless playback on unsupported iPods with Stock OS + Store 10x more songs without issues + Improve UI responsiveness + Improve boot time: it's time to regroup your songs by albums !
 *Date: 23 December 2024*
 
+![Alt text](gapless-lagless-oldapple/header.jpeg "Header")
+
 # Introduction
 ## Glossary
 ### What is Gapless playback ?
