@@ -1,5 +1,5 @@
 ﻿# Gapless playback on unsupported iPods with Stock OS + Store 10x more songs without issues + Improve UI responsiveness + Improve boot time: it's time to regroup your songs by albums !
-*Date: 23 December 2024*
+*Date: 23 December 2024, last edited: 1 January 2025*
 
 ![Alt text](gapless-lagless-oldapple/header.jpeg "Header")
 
@@ -61,7 +61,7 @@ This guide is Windows-only. Some parts can be replicated pretty easily on MacOS,
 	4) Click on ```Output format``` then double-click on ```AAC (Apple)```
 	5) Bit rate mode must be: ```Constrained VBR``` and the quality ```128 kbps``` or ```160 kbps```. If you really need to save disk space, you can go down to 96 kbps (but it will not feel transparent enough all time). Any bitrate more than 128kbps will give diminishing returns perceptually more you increase the bitrate. If you don't know what to choose and want absolute guarantee that it will be very safely transparent even for Classical music (which is one of the most complex music type to compress), choose ```160 kbps```.
 	6) Now click ```Ok``` to close the encoder configuration window, then click ```Back```. In ```Output format```, you should now see ```AAC (Apple), CVBR```
-	7) Now click on ```Destination``` then check ```Generate multi-track files``` (should be already checked) then put this pattern: ```%album artist%/$if(%album%,%album% - CD$if(%discnumber%,%discnumber%,1),%album%/%filename%)``` which will be clean, simple and without conflicts if your music is properly tagged. One file will be created and chaptered for each CD.
+	7) Now click on ```Destination``` then check ```Generate multi-track files``` (should be already checked) then put this pattern: ```$replace($left(%album artist%,1),.,_)$right(%album artist%,$sub($len(%album artist%),1))/$if(%album%,$replace($left(%album%,1),.,_)$right(%album%,$sub($len(%album%),1)) - CD$if(%discnumber%,%discnumber%,1),$replace($left(%album%,1),.,_)$right(%album%,$sub($len(%album%),1))/$replace($left(%filename%,1),.,_)$right(%filename%,$sub($len(%filename%),1)))``` which will be clean, simple and without conflicts if your music is properly tagged. One file will be created and chaptered for each CD.
 	8) Now click on ```Back```; the new destination pattern should appear under the ```Destination``` clickable link. You can now ```Save <<``` your new preset with a custom name so you can re-use it anytime later (for example it can be: ```Apple AAC QuickTime Gapless```).
 	9) Now you can ```Load >>``` your preset anytime you want then click on the ```Convert``` button to start converting the music files into the destination folder of your choice.
 
