@@ -11,6 +11,9 @@ If you can and if you feel that my work deserves a few dollars, you can easily t
 # List of all available guides
 *Guides are ordered descendently by their release date.*
 
+
+[Apple Old Music Player Buyer and User Guide](guides/apple-oldmusicplayer-buyeruserguide.md)
+
 [Gapless playback on unsupported iPods with Stock OS + Store 10x more songs without issues + Improve UI responsiveness + Improve boot time: it's time to regroup your songs by albums !](guides/gapless-lagless-oldapple.md)
 
 [Rockbox does support smart playlists (and it's awesome)](guides/rockbox-smart-playlists.md)
