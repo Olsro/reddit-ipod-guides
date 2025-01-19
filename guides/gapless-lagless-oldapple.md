@@ -1,5 +1,5 @@
 ﻿# Gapless playback on unsupported iPods with Stock OS + Store 10x more songs without issues + Improve UI responsiveness + Improve boot time: it's time to regroup your songs by albums !
-*Date: 23 December 2024, last edited: 1 January 2025*
+*Date: 23 December 2024, last edited: 19 January 2025*
 
 ![Alt text](gapless-lagless-oldapple/header.jpeg "Header")
 
@@ -32,7 +32,7 @@ We are going to transform all your albums into single files then import these si
 
 ## Disadvantages
 - The "repeat one" feature will become kinda pointless since it will be albums based, so you will need yourself to press the rewind button at the end of the song to play it again. But if you really love a specific song, you can still extract it yourself to an individual file and make as much exceptions as you need to put your "best songs of all time" in one playlist that you will maintain.
-- You will not know anymore what artists made/composed a specific song and what is the title of the currently played song (but you can still Shazam your docked iPod or open a .m4a album music file on Foobar2000 to see again all the titles that are contained in the album individually). iTunes can see the titles of each chapters each when you play a song, though.
+- You will not know anymore what artists made/composed a specific song and what is the title of the currently played song (but you can still Shazam your docked iPod or open a .m4a album music file on Foobar2000 to see again all the titles that are contained in the album individually). iTunes can see the titles of each chapters each when you play a song, though. I provide also a solution to abuse the "lyrics" feature to include the titles of the chapters instead so you can keep seeing the titles if your iPod supports seeing lyrics.
 - You can't rate an individual chapter which means you will rate directly the whole album file and your smart playlists will update accordingly
 - Your iTunes music library will look kinda messy on your computer
 - You will lose flexibility and have to stick with full albums when you transfer music
@@ -50,11 +50,12 @@ This new organization of your files implies compromises; take this decision with
 # The technical guide
 This guide is Windows-only. Some parts can be replicated pretty easily on MacOS, though, excepted the core conversion with the old AAC encoder. Produced files with this guide can be imported on any Mac or iTunes version. Modern Macs should use a Windows virtual machine to do the following steps.
 
-1. Install the latest Foobar2000 version (you can even install the ARM64 version if your machine is an ARM64 one) : [https://www.foobar2000.org/download](https://www.foobar2000.org/download) If you want to sync your iPod using Foobar2000 rather than iTunes, you must install the x86 version
-2. Install the Foobar2000 encoders pack : [https://www.foobar2000.org/encoderpack](https://www.foobar2000.org/encoderpack)
-3. Install the QuickTime 7.6.6 portable encoder that I provide for convenience to integrate directly with Foobar2000. If you don't trust me, you can check the SHA256/signatures of the files, and even make yourself your own portable encoder files by using the ```qt-2015-makeportable.cmd``` file that I provide in this archive. Copy and replace the unzipped content of [gapless-lagless-oldapple/foobarencoders.7z](gapless-lagless-oldapple/foobarencoders.7z) inside the folder ```foobar installation folder/encoders```. Replace any existing files if it asks to.
-4. Inside the ```foobar installation folder/encoders``` folder, rename ```refalac64.exe``` to ```disabledrefalac64.exe``` and ```qaac64.exe``` to ```disabledqaac64.exe``` because we want Foobar2K to use our 32 bits version that will use the 32 bits QuickTime binaries. QuickTime 7.6.6 was compiled only in 32 bits to convert music files (and qaac architecture need to match with the arch of QTFiles).
-5. [Video guide](gapless-lagless-oldapple/foobar2k.mp4) You should now be able to do the converts directly from the Foobar2000 UI: 
+1. Install Java 17 (or a more recent version of Java): [https://learn.microsoft.com/en-us/java/openjdk/download](https://learn.microsoft.com/en-us/java/openjdk/download) and be sure to include it in your path during installation (it should be the case by default).
+2. Install the latest Foobar2000 version (you can even install the ARM64 version if your machine is an ARM64 one) : [https://www.foobar2000.org/download](https://www.foobar2000.org/download) If you want to sync your iPod using Foobar2000 rather than iTunes, you must install the x86 version
+3. Install the Foobar2000 encoders pack : [https://www.foobar2000.org/encoderpack](https://www.foobar2000.org/encoderpack)
+4. Install the QuickTime 7.6.6 portable encoder that I provide for convenience to integrate directly with Foobar2000. If you don't trust me, you can check the SHA256/signatures of the files, and even make yourself your own portable encoder files by using the ```qt-2015-makeportable.cmd``` file that I provide in this archive. Copy and replace the unzipped content of [gapless-lagless-oldapple/foobarencoders.7z](gapless-lagless-oldapple/foobarencoders.7z) inside the folder ```foobar installation folder/encoders```. Replace any existing files if it asks to.
+5. Inside the ```foobar installation folder/encoders``` folder, rename ```refalac64.exe``` to ```disabledrefalac64.exe``` and ```qaac64.exe``` to ```disabledqaac64.exe``` because we want Foobar2K to use our 32 bits version that will use the 32 bits QuickTime binaries. QuickTime 7.6.6 was compiled only in 32 bits to convert music files (and qaac architecture need to match with the arch of QTFiles).
+6. [Video guide](gapless-lagless-oldapple/foobar2k.mp4) You should now be able to do the converts directly from the Foobar2000 UI: 
 	1) Scan some (lossless if possible) music to convert. Click on ```Library``` (located in the top menu of the app) then click on ```Configure```, a new window will appear. On the left of this window, click on ```Media Library``` then you can add your ```Music folders``` by clicking the adequate ```Add...``` button. Compared to iTunes, Foobar2K will scan everything, even FLAC files, and will be able to convert from them. Now that your library is scanned into Foobar2000, you can close this window with the ```OK``` button.
 	2) In the dropdown view (bottom-left of the window), select ```by album``` (this is **very important** or albums will not be grouped correctly by CDs)
 	3) Now right-click on ```All music``` then select ```Convert``` then select ```...```
@@ -65,8 +66,6 @@ This guide is Windows-only. Some parts can be replicated pretty easily on MacOS,
 	8) Now click on ```Back```; the new destination pattern should appear under the ```Destination``` clickable link. You can now ```Save <<``` your new preset with a custom name so you can re-use it anytime later (for example it can be: ```Apple AAC QuickTime Gapless```).
 	9) Now you can ```Load >>``` your preset anytime you want then click on the ```Convert``` button to start converting the music files into the destination folder of your choice.
 
-6. [Video guide](gapless-lagless-oldapple/convertchapters.mp4) The converted files are chaptered by using the Nero format, and iTunes don't understand it and has its own format for chaptering. So we need to use a program to convert chapters. Get this tool that I compiled for you [gapless-lagless-oldapple/mp4chaps.7z](gapless-lagless-oldapple/mp4chaps.7z) and copy it inside the ```destination folder containing your converted music``` then double click on ```open cmd here.bat``` to open a console window. Copy paste this command on the opened console window: ```for /R %f in (*.m4a) do (mp4chaps -Q -c "%~sf")``` (to paste the command, press ```right-click``` on your mouse in the inside of the terminal window). This will process all the .m4a files to convert their chapters format from ```Nero``` to ```QuickTime (iTunes)```.
-
 7. [Video guide](gapless-lagless-oldapple/mp3tag.mp4) We are going to update the metadata of our produced files to make them more friendly to read. This step is important and should not be ignored or all grouped files will look strange/bad on device and on iTunes.
 	1) For that, you need to install and start this tool: [https://www.mp3tag.de/en/download.html](https://www.mp3tag.de/en/download.html)
 	2) Download my configuration file and extract it: [gapless-lagless-oldapple/Mp3tagSettings.7z](gapless-lagless-oldapple/Mp3tagSettings.7z)
@@ -74,10 +73,22 @@ This guide is Windows-only. Some parts can be replicated pretty easily on MacOS,
 	4) Now drag & drag the folder containing all your converted music to add the music into the mp3tag UI. You can now select all the songs (the quickest way is to click on one song then use the ```CTRL+A``` shortcut on your keyboard).
 	5) From the top menu of the app, click on ```Action``` then on ```iPod Processing```. This will take a while. Metadata will be sanitized, correctly formatted and cleaned for all of your tracks.
 
-8. Then you can copy the produced files and import these on your favourite iTunes/Apple Music version. I recommend to disable completely "Sound Check" (https://support.apple.com/en-us/109331) on iTunes to avoid un-necessary very long processing times on iTunes when you will import your files. Apple Sound Check was designed for independent titles, not for full albums. If the scanning process is already started, you can stop it (by clicking on the cross icon in the status bar) and sync your music straight away. You can disable Sound Check completely on your iPod, it will be useless because there's no metadata to read about it anyway.
+8. [Video guide](gapless-lagless-oldapple/convertchapters.mp4) The converted files are chaptered by using the Nero format, and iTunes don't understand it and has its own format for chaptering. So we need to use a program to convert chapters.
+	1) Get this set of tools that I compiled for you [gapless-lagless-oldapple/mp4tools.7z](gapless-lagless-oldapple/mp4tools.7z) and copy it inside the ```destination folder containing your converted music```.
+	2) Double click on ```open cmd here.bat``` to open a console window.
+	3) Copy paste this command on the opened console window: ```for /R %f in (*.m4a) do (mp4chaps -Q -c "%~sf")``` (to paste the command, press ```right-click``` on your mouse in the inside of the terminal window) then press ```Enter``` to run it. This will process all the .m4a files to convert their chapters format from ```Nero``` to ```QuickTime (iTunes)```.
+	4) When it is finished, don't close the terminal window, because we will use it for next step
+
+9. To keep being able to read the track titles on your iPod, I've coded a program in **Java 17** (so you need first to **install Java on your PC** to use it) that automatically converts chapters data into lyrics. Some iPods starting the iPod Videos and Classics can see lyrics by pressing the center button multiple times during playback.
+	1) Copy paste this command on the opened console window: ```java -jar cal.jar``` (to paste the command, press ```right-click``` on your mouse in the inside of the terminal window) then press ```Enter``` to run it.
+	2) When it is finished, you can now close the terminal window.
+
+10. Then you can copy the produced files and import these on your favourite iTunes/Apple Music version. I recommend to disable completely "Sound Check" (https://support.apple.com/en-us/109331) on iTunes to avoid un-necessary very long processing times on iTunes when you will import your files. Apple Sound Check was designed for independent titles, not for full albums. If the scanning process is already started, you can stop it (by clicking on the cross icon in the status bar) and sync your music straight away. You can disable Sound Check completely on your iPod, it will be useless because there's no metadata to read about it anyway.
+
+![Alt text](gapless-lagless-oldapple/chapters-as-lyrics.jpeg "Chapters as lyrics")
 
 ## What if I want to add more music in the future ?
-Now that your PC/Windows virtual machine is properly configured to convert and process the metadata, it is getting easier for next times. To add more songs, just open Foobar2K to convert the new songs, then run the mp4chaps script to convert the chapters from Nero to QuickTime. Then, run mp3tags to apply the action ```iPod Processing``` on all the files. All done ! The files are processed and high quality; ready to import and synced to your device through iTunes.
+Now that your PC/Windows virtual machine is properly configured to convert and process the metadata, it is getting easier for next times. Just follow these steps in order: 6.9, 7.5, 8, 9, and 10.
 
 # Support my work
 You can tip me on Patreon: https://www.patreon.com/Olsro
