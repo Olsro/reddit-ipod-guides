@@ -1,5 +1,5 @@
 # Some important facts about iPods that I wished I could know when I started getting into this hobby
-*Date: 12 September 2024, last edited: 19 January 2025*
+*Date: 12 September 2024, last edited: 20 January 2025*
 
 Hello all !
 
@@ -9,7 +9,6 @@ Here again to share some thoughts, I hope those can be helpful for someone here 
 
 * Get an iSesamo (or equivalent) and tools (plastic) from iFixit or any good source. This is an investment that will avoid you to use improvised tools that you already have at home and that can multiply your chances to ruin your iPod when you will try to open it. Opening an iPod is very difficult without good tools and risky. But with good tools, the experience is very different.
 * Breaking a connector is easy, even on the iPod Minis. This is still fragile old electronics, so it's important to do things very slowly and gently.
-* iFlash adapters are good for Stock OS but very bad for Rockbox; using any SD adapters with Rockbox ruins the battery life
 * Use the sketchy red CF-SD adapter only if you can accept slower transfer speed (around 30%) and their related 128GB limitation. These also often need an MBR repair trick to pass successfully the restore.
 * USB fast charging cables that will output 12V if you have any fast-charging Android charger can be found on Ali Express for around 15 dollars. This is in my opinion a better option rather than getting the firewire brick (search for "usb 12V Ipod").
 * SATA modding is not recommended even if Rockbox supports power management with it, this solution has too much spin-up latency and is more power hungry
