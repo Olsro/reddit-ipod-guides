@@ -1,5 +1,5 @@
 # Encoding audio tracks for any clickwheel iPod or below iOS 7 device with the best possible quality/disk space ratio
-*Date: 6 Octobre 2024, last edited: 16 December 2024*
+*Date: 6 Octobre 2024, last edited: 3 February 2025*
 
 Have you ever heared terrible crackling artifacts when listening to your self-converted lossy audio or videos on your iPod ? You are not mad; any iOS device below iOS 7 and any clickwheel iPod have issues with modernly encoded files. I reproduced it with modern AAC files but also with LAME encoded MP3s. This issue can be reduced by using very high bitrates, but it will sometimes still persist on some songs with less noticeable differences.
 
@@ -18,7 +18,7 @@ We are going to setup a powerful music convert environment here to mass (and in 
 1. Install the latest Foobar2000 version (you can even install the ARM64 version if your machine is an ARM64 one) : [https://www.foobar2000.org/download](https://www.foobar2000.org/download) If you want to sync your iPod using Foobar2000 rather than iTunes, you must install the x86 version
 2. Install the Foobar2000 encoders pack : [https://www.foobar2000.org/encoderpack](https://www.foobar2000.org/encoderpack)
 3. Inside the ```foobar installation folder/encoders``` folder, typically located at ```C:\Program Files\foobar2000\encoders``` rename ```qaac64.exe``` to ```oldqaac64.exe``` because we want Foobar2K to use our 32 bits version that will use the 32 bits QuickTime binaries.
-4. Install the QuickTime 7.6.6 portable encoder that I provide for convenience to integrate directly with Foobar2000. Copy and replace the unzipped content of [encode-audio-tracks-oldapple/foobarencoders.7z](encode-audio-tracks-oldapple/foobarencoders.7z) inside the folder ```foobar installation folder/encoders```. Replace any existing files if it asks to. For making your own portable encoder, [look at #Building your own portable encoder](#building-your-own-portable-encoder)
+4. Install the QuickTime 7.6.6 portable encoder by copying and replacing the files from [encode-audio-tracks-oldapple/foobarencoders.7z](encode-audio-tracks-oldapple/foobarencoders.7z) to the same folder as in the previous step (```Foobar/Encoders```). For making your own portable encoder, [look at #Building your own portable encoder](#building-your-own-portable-encoder)
 5. You should now be able to do the converts directly from the Foobar2000 UI: 
 	1) Scan some (lossless if possible) music to convert. Click on ```Library``` (located in the top menu of the app) then click on ```Configure```, a new window will appear. On the left of this window, click on ```Media Library``` then you can add your ```Music folders``` by clicking the adequate ```Add...``` button. Compared to iTunes, Foobar2K will scan everything, even FLAC files, and will be able to convert from them. Now that your library is scanned into Foobar2000, you can close this window with the ```OK``` button.
     2) Make sure you have enabled the album list window, this can be done by going to View -> Layout -> Quick Setup -> Any option with the Album List enabled
