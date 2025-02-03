@@ -1,5 +1,5 @@
 # Encoding audio tracks for any clickwheel iPod or below iOS 7 device with the best possible quality/disk space ratio
-*Date: 6 Octobre 2024, last edited: 16 December 2024*
+*Date: 6 Octobre 2024, last edited: 3 February 2025*
 
 Have you ever heared terrible crackling artifacts when listening to your self-converted lossy audio or videos on your iPod ? You are not mad; any iOS device below iOS 7 and any clickwheel iPod have issues with modernly encoded files. I reproduced it with modern AAC files but also with LAME encoded MP3s. This issue can be reduced by using very high bitrates, but it will sometimes still persist on some songs with less noticeable differences.
 
@@ -17,14 +17,15 @@ We are going to setup a powerful music convert environment here to mass (and in 
 
 1. Install the latest Foobar2000 version (you can even install the ARM64 version if your machine is an ARM64 one) : [https://www.foobar2000.org/download](https://www.foobar2000.org/download) If you want to sync your iPod using Foobar2000 rather than iTunes, you must install the x86 version
 2. Install the Foobar2000 encoders pack : [https://www.foobar2000.org/encoderpack](https://www.foobar2000.org/encoderpack)
-3. Install the QuickTime 7.6.6 portable encoder that I provide for convenience to integrate directly with Foobar2000. If you don't trust me, you can check the SHA256/signatures of the files, and even make yourself your own portable encoder files by using the ```qt-2015-makeportable.cmd``` file that I provide in this archive. Copy and replace the unzipped content of [encode-audio-tracks-oldapple/foobarencoders.7z](encode-audio-tracks-oldapple/foobarencoders.7z) inside the folder ```foobar installation folder/encoders```. Replace any existing files if it asks to.
-4. Inside the ```foobar installation folder/encoders``` folder, rename ```refalac64.exe``` to ```disabledrefalac64.exe``` and ```qaac64.exe``` to ```disabledqaac64.exe``` because we want Foobar2K to use our 32 bits version that will use the 32 bits QuickTime binaries. QuickTime 7.6.6 was compiled only in 32 bits to convert music files (and qaac architecture need to match with the arch of QTFiles).
+3. Inside the ```foobar installation folder/encoders``` folder, typically located at ```C:\Program Files\foobar2000\encoders``` rename ```qaac64.exe``` to ```oldqaac64.exe``` because we want Foobar2K to use our 32 bits version that will use the 32 bits QuickTime binaries.
+4. Install the QuickTime 7.6.6 portable encoder by copying and replacing the files from [encode-audio-tracks-oldapple/foobarencoders.7z](encode-audio-tracks-oldapple/foobarencoders.7z) to the same folder as in the previous step (```Foobar/Encoders```). For making your own portable encoder, [look at #Building your own portable encoder](#building-your-own-portable-encoder)
 5. You should now be able to do the converts directly from the Foobar2000 UI: 
 	1) Scan some (lossless if possible) music to convert. Click on ```Library``` (located in the top menu of the app) then click on ```Configure```, a new window will appear. On the left of this window, click on ```Media Library``` then you can add your ```Music folders``` by clicking the adequate ```Add...``` button. Compared to iTunes, Foobar2K will scan everything, even FLAC files, and will be able to convert from them. Now that your library is scanned into Foobar2000, you can close this window with the ```OK``` button.
-	2) In the dropdown view (bottom-left of the window), select ```by artist/album```
-	3) Now right-click on ```All music``` then select ```Convert``` then select ```...```
-	4) Click on ```Output format``` then double-click on ```AAC (Apple)```
-	5) Bit rate mode must be: ```Constrained VBR``` and the quality ```128 kbps``` or ```160 kbps```. If you really need to save disk space, you can go down to 96 kbps (but it will not feel transparent enough all time). Any bitrate more than 128kbps will give diminishing returns perceptually more you increase the bitrate. If you don't know what to choose and want absolute guarantee that it will be very safely transparent even for Classical music (which is one of the most complex music type to compress), choose ```160 kbps```.
+    2) Make sure you have enabled the album list window, this can be done by going to View -> Layout -> Quick Setup -> Any option with the Album List enabled
+	3) In the dropdown view (bottom-left of the window), select ```by artist/album```
+	4) Now right-click on ```All music``` then select ```Convert``` then select ```...```
+	5) Click on ```Output format``` then double-click on ```AAC (Apple)```
+	6) Bit rate mode must be: ```Constrained VBR``` and the quality ```128 kbps``` or ```160 kbps```. If you really need to save disk space, you can go down to 96 kbps (but it will not feel transparent enough all time). Any bitrate more than 128kbps will give diminishing returns perceptually more you increase the bitrate. If you don't know what to choose and want absolute guarantee that it will be very safely transparent even for Classical music (which is one of the most complex music type to compress), choose ```160 kbps```.
 	6) Now click ```Ok``` to close the encoder configuration window, then click ```Back```. In ```Output format```, you should now see ```AAC (Apple), CVBR```
 	7) Now click on ```Destination``` then check ```Convert each track to an individual file``` (should be already checked) then put this pattern: ```%album artist%/%album%/%filename%``` which will be clean, simple and without conflicts if your music is properly tagged.
 	8) Now click on ```Back```; the new destination pattern should appear under the ```Destination``` clickable link. You can now ```Save <<``` your new preset with a custom name so you can re-use it anytime later (for example it can be: ```Apple AAC QuickTime```).
@@ -93,6 +94,9 @@ There is some documentation here : [https://www.reddit.com/r/LegacyJailbreak/com
 # What if I do not hear any strange issues with my modernly encoded files ?
 
 Continue to be happy and ignore this paper, music is all about feeling ;)
+
+# Building your own portable encoder
+You can make one yourself by using the ```qt-2015-makeportable.cmd``` file that I provide in this archive. Note - you must provide the installer with a Quicktime installer like QuickTime 7.7.0 or something else.
 
 # Conclusion
 
