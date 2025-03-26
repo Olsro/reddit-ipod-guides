@@ -1,5 +1,5 @@
 # Encoding audio tracks for any clickwheel iPod or below iOS 7 device with the best possible quality/disk space ratio
-*Date: 6 October 2024, last edited: 24 March 2025*
+*Date: 6 October 2024, last edited: 26 March 2025*
 
 Have you ever heared terrible crackling artifacts when listening to your self-converted lossy audio or videos on your iPod ? You are not mad; any iOS device below iOS 7 and any clickwheel iPod have issues with modernly encoded files. I reproduced it with modern AAC files but also with LAME encoded MP3s. This issue can be reduced by using very high bitrates, but it will sometimes still persist on some songs with less noticeable differences.
 
@@ -103,13 +103,17 @@ You can make one yourself by using the ```qt-2015-makeportable.cmd``` file that 
 It was such a long trip to understand then document this issues that required many tests. Right now I am very happy about the result, the music sound and feels like "CD quality" while saving a damn lot of disk space compared to ALAC or AIFF. The result is very satisfying. The AAC encoder was very mature around 2009 and well tested with all kind of musics to be rock-solid starting 128kbps CBR.
 
 # Alternatives using moderns musics conversions stacks
-DBPoweramp Music Converter (also available on MacOS !), fre:ac, Foobar2K and many popular programs can help you to encode your music using the modern Apple AAC encoder using true VBR settings.
+DBPoweramp Music Converter (also available on MacOS !), fre:ac, Foobar2K and many popular programs can help you to encode your music using the modern Apple AAC encoder.
 
-Starting TVBR quality 108, I could not hear any artifacts anymore even at full focus on the affected song. Though this setting will produce way larger lossy files compared to using the old Apple AAC encoder at 128kbps/160kbps CVBR, but files sizes will still be around 4x smaller compared to ALAC lossless, while allowing you to use a modern workflow that may be more easy/futureproof in your own environment.
+When using the modern encoders, it's crucial to convert at **very** (but not excessive) high bitrates to avoid old-devices artifacts so you will get a clean sound from your beloved iPod. 
 
-If you cannot use the Apple AAC encoder, use the fdk-AAC encoder at VBR quality 5. The fdk-AAC encoder is available in most serious music converting programs.
+I recommend to always choose 256kbps CBR because any kind of VBR mode is not giving any meaningful quality improvement past 192kbps. VBR was invented mostly because encoding CBR at around 128kbps was not transparent in some cases, so it is a way to help clearing noticeable artifacts in this case.
 
-If you need to use iTunes/the Apple Music app to convert music, you cannot use TVBR: the VBR setting in iTunes is in fact always CVBR (Constant Variable Bitrate). Tick the "VBR" setting then select a bitrate of 256kbps (which is the initial default) and it will sound perfect. If you import real CDs using iTunes/the Apple Music app, don't forget also to enable the option "Error correction" in your import settings.
+If you want to use iTunes/the Apple music app, you can choose the import preset "iTunes Plus" which is 256kbps CVBR, or select yourself AAC 256kbps CBR (without VBR). For reference, all songs purchased from the iTunes Store are as of 2025 still encoded at 256kbps CBR. Don't forget also to enable the option "Error correction" in your import settings if you plan to import real CDs on iTunes.
+
+If you cannot use the Apple AAC encoder, use the fdk-AAC encoder at CBR 256kbps. The fdk-AAC encoder is available in most serious music converting programs.
+
+**Don't use AAC 320kbps or any VBR setting that is close to it.** AAC is not like mp3: there's no meaningful quality improvements past 256kbps, anything more will be purely academical. Also, excessively high bitrates AAC files can/will cause instabilities when played with your iPod (TVBR setting -q 127 for example is known to cause system crashes at almost each songs switches on all iPods older than the Classic line).
 
 # Support my work
 
