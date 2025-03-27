@@ -1,5 +1,5 @@
 # iPod Mini : sharing thoughts and tricks on daily driving it !
-*Date: 25 July 2024, last edited: 23 November 2024*
+*Date: 25 July 2024, last edited: 27 March 2025*
 
 # Motivation to write this
 
@@ -40,7 +40,7 @@ There's some things I advise you to change (I will always explain why) to get a 
 * Theme : I use themes that I heavily improved, fixed and modified by myself. All my work is shared there : [https://github.com/Olsro/rockbox-mini2g-themes/tree/main](https://github.com/Olsro/rockbox-mini2g-themes/tree/main)
 * Settings -> General Settings -> Playlists -> Playlist Viewer Settings -> Track Display -> Title & Album from ID3 tags. Enable this option to get a reliable view in any playlist viewers by using ID3 tags rather than file names. This option is especially relevant if you sync your music with iTunes which obfuscates heavily the file names.
 * You should try enabling morse code input. I feel it's much easier than the clunky virtual keyboard to input things using just the center button of your click-wheel. (Settings -> General settings -> System -> Use Morse Code Input). It's useful to use the Search feature more comfortably.
-* I advise to enable ReplayGain Track Gain especially if you shuffle a lot between different songs to normalize the volume (Settings -> Playback Settings -> Replaygain). Be sure that all your songs are properly tagged with ReplayGain, if not you can easily do it with Foobar2000 or DBPoweramp using a DSP Effect. You may also enable "Prevent Clipping".
+* I advise to enable ReplayGain Album Gain especially if you shuffle a lot between different songs to normalize the volume (Settings -> Playback Settings -> Replaygain). Be sure that all your songs are properly tagged with ReplayGain, if not you can easily do it with Foobar2000 or DBPoweramp using a DSP Effect. You may also enable "Prevent Clipping".
 * Enable Glyphs Caching to improve responsiveness of the UI : Settings -> General settings -> System -> Limits -> Glyphs To Cache -> 65540
 * Set the Idle Poweroff to 3 minutes (Settings -> General settings -> Startup/Shutdown -> Idle Poweroff)
 * Disable Fade On Stop/Pause (because it's adding an un-necessary processing) : Settings -> Playback Settings -> Fade on Stop/Pause
