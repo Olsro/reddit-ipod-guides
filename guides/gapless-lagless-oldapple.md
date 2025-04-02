@@ -1,5 +1,5 @@
 ﻿# Gapless playback on unsupported iPods with Stock OS + Store 10x more songs without issues + Improve UI responsiveness + Improve boot time: it's time to regroup your songs by albums !
-*Date: 23 December 2024, last edited: 19 January 2025*
+*Date: 23 December 2024, last edited: 2 April 2025*
 
 ![Alt text](gapless-lagless-oldapple/header.jpeg "Header")
 
@@ -46,6 +46,9 @@ This new organization of your files implies compromises; take this decision with
 - How many tracks do I have and want to have on my iPod ? If this number is under around 10 000 (or 20 000 with Classics), you will not get a huge speed boost in most of the cases.
 - Am I ready to invest time at building a new lossy library that I will need to maintain alongside my main lossless library ?
 - Am I ok with the fact that my iPod will become essentially a full-albums player ? Finding songs for you may be much more difficult if you don't know what's inside your albums. But if you do, navigation inside is pretty quick thanks to chapters. On monochrome iPods you will also not be able to help yourself with album illustrations which will reward very highly your memory skills at knowing what is exactly inside your iPod.
+
+# Important: About your source files
+I recommend lossless files at 44.1KHz/16 bits/stereo (which is CD quality). After encoding, there will be no notions of bits in AAC, but the sampling rate (for example 44.1KHz) will remain in the AAC file. iPods needs 44.1KHz or 48KHz sampling rates; anything different will cause issues. If it's different, resample your audio source files (Foobar2K/DBPoweramp can do that) before continuing further in this tutorial.
 
 # The technical guide
 This guide is Windows-only. Some parts can be replicated pretty easily on MacOS, though, excepted the core conversion with the old AAC encoder. Produced files with this guide can be imported on any Mac or iTunes version. Modern Macs should use a Windows virtual machine to do the following steps.

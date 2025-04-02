@@ -1,5 +1,5 @@
 # Encoding audio tracks for any clickwheel iPod or below iOS 7 device with the best possible quality/disk space ratio
-*Date: 6 October 2024, last edited: 26 March 2025*
+*Date: 6 October 2024, last edited: 2 April 2025*
 
 Have you ever heared terrible crackling artifacts when listening to your self-converted lossy audio or videos on your iPod ? You are not mad; any iOS device below iOS 7 and any clickwheel iPod have issues with modernly encoded files. I reproduced it with modern AAC files but also with LAME encoded MP3s. This issue can be reduced by using very high bitrates, but it will sometimes still persist on some songs with less noticeable differences.
 
@@ -10,6 +10,9 @@ I will focus on this paper on how to get the most quality for your device while 
 You may hear also small artifacts coming from the compression itself on difficult songs or if you have golden ears. The trick here is that if you think that a music track sound awful on your iPod, you should also try to listen to it on any modern tech device like your computer. If the music does not have any crackles and terrible noise on your computer, this means that you have just noticed this terrible issue that only affect you if you play the same file on any old iOS device (< iOS 7) or clickwheel iPod.
 
 Consider that if you find one problematic track, many more are also affected even if you notice it less, so I recommend just to blindly convert from lossless to lossy using this guide to uniformize everything (but always keep somewhere your original lossless tracks, you should never delete those files just in case).
+
+# Important: About your source files
+I recommend lossless files at 44.1KHz/16 bits/stereo (CD quality). After encoding, there will be no notions of bits in AAC, but the sampling rate (for example 44.1KHz) will remain in the AAC file. iPods needs 44.1KHz or 48KHz sampling rates; anything different will cause issues. If it's different, resample your audio source files (Foobar2K/DBPoweramp can do that) before continuing further in this tutorial.
 
 # Windows setup (the easiest and most powerful method is here)
 
