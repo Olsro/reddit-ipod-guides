@@ -1,4 +1,5 @@
 # Apple Old Music Player Buyer and User Guide
+*Date: 13 January 2025, last edited: 2 April 2025*
 
 ## Introduction
 I have a lot of experience with almost all iPods and iPhones, so I want to share it by providing an updated guide. I will keep this simple and Stock OS/hardware-focused, and providing pros, cons, advices, and thoughts about each options.
@@ -19,30 +20,32 @@ The last iPod models from the Clickwheel era.
 - These have the best color screens.
 - Can play the Clickwheel Games with the best possible performance.
 - Some cool gadget features: Genius, Cover Flow
+- Can play videos and be a pretty solid, fast, and reliable way to enjoy 4:3 and 16:9 contents on the go especially if you battery mod it.
 
 **Cons:**
-- The "On-the-go" playlist is annoying to build on device because it asks for a confirm each time you want to add new content to it
 - iPod Classics 6G and 6.5G are limited to 128GB storage mods on Stock OS.
 - More difficult to open compared to the iPod Video
 
 **Advices:**
-- Don't mod this kind of iPod with a green board + a CF card, there's annoying sound noises when there is disk accesses with this configuration. I recommend to get an iFlash Solo + an SD card instead.
+- Don't mod this kind of iPod with a green board + a CF card, there's annoying sound noises when there is disk accesses with this configuration. I recommend to get an iFlash Solo + an SD card instead. I also recommend that cheap SSD plug&play solution that you can get from Ali Express: https://fr.aliexpress.com/item/1005008215403225.html
 - Check this video from Nekomichi to learn how to open as easy as possible this iPod: https://www.youtube.com/watch?v=a3gPf6obQHs
 
 ## iPod Videos
-The model that introduced the final design, that Apple kept almost unchanged until the end of Clickwheel iPods.
+The model that introduced the final design & form factor, that Apple kept almost unchanged until the end of Clickwheel iPods.
 
 **Pros:**
 - A lot of parts available to buy (battery mods, custom shells, multiple iFlash boards)
 - This iPod is the first model with a "big" screen that can show a lot of text from each lines. Also, the Stock OS is able to scroll in real time too long texts from the metadata of your songs.
-- Can play all the Clickwheel Games with decent performance for most of them. A nice bonus to enjoy while enjoying the music.
+- Can play all the Clickwheel Games (even the first ones, like Lost) with decent performance for most of them. A nice bonus to enjoy while enjoying the music.
+- Can play videos and be a pretty solid, fast, and reliable way to enjoy 4:3 and 16:9 contents on the go especially if you battery mod it.
 
 **Cons:**
-- Can't find any, it's a very balanced pod.
+- Many clickwheel games takes a long time to launch and lag
+- The whole iPod in menus/clickwheel games feels sluggish when there is music playing in the background
 
 **Advices:**
 - Get a 5.5G if you can, but 5G are fine. Don't feel worried too much about getting the 64MB RAM models, the difference is subtle with the 32MB of RAM models, and is noticeable only when storing more than 10K/20K songs.
-- Don't mod this kind of iPod with a green board + a CF card, there's annoying sound noises when there is disk accesses with this configuration. I recommend to get an iFlash Solo + an SD card instead.
+- Don't mod this kind of iPod with a green board + a CF card, there's annoying sound noises when there is disk accesses with this configuration. I recommend to get an iFlash Solo + an SD card instead. I also recommend that cheap SSD plug&play solution that you can from Ali Express: https://fr.aliexpress.com/item/1005008215403225.html
 - Check this video from Nekomichi to learn how to open as easy as possible this iPod: https://www.youtube.com/watch?v=a3gPf6obQHs
 
 ## iPod 4th gen Mono
@@ -56,7 +59,6 @@ A simple music player experience. For those who don't mind about album arts, pho
 - Even when backlight is off, you can still often perceive clearly enough what's on the screen to check the progress bar. It is very convenient to show the progress of the current track/album when the iPod is docked. You lose this comfort when you switch to the modern iPods that have very unreadable screens when backlight is off.
 
 **Cons:**
-- Terrible battery life with Rockbox when flash-modded
 - Can't charge through an USB wallplug (can charge only through firewire or when plugged on a PC because of an issue that was fixed only starting the iPod Video)
 - Can't show album arts and long names in the menus. There's no text scrolling at all in these models on all menus. Scrolling happen only in the music playing screen. Though this model can show one more line and some more characters compared to an iPod Mini.
 - Need a workaround to get gapless playback (play CDs without gap between tracks for CDs that were recorded to take advantage of gapless playback, like live performances)
@@ -81,7 +83,6 @@ The iPod Minis are the tiniest options regarding to moddable iPods. If you want 
 
 **Cons:**
 - Not so easy to mod. Once opened, it's easy, but it's also easy to break something during the process which can break a complete logic board and requires soldering skills to fix.
-- Terrible battery life with Rockbox when flash-modded
 - Can't charge through an USB wallplug (can charge only through firewire or when plugged on a PC because of an issue that was fixed only starting the iPod Video)
 - Can't show album arts and long names in the menus. There's no text scrolling at all in these models on all menus. Scrolling happen only in the music playing screen. The tiny screen of the mini can't show much text on each line.
 - Need a workaround to get gapless playback (play CDs without gap between tracks for CDs that were recorded to take advantage of gapless playback, like live performances)
