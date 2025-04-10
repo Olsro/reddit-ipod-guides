@@ -78,7 +78,7 @@ Prefer dubbed content and burn only forced subtitles to reduce as much as possib
 The Windows/Linux version of Handbrake includes by default only an open source AAC audio encoder, which encoder the iPod dislikes heavily. The non-open source fdk-AAC encoder is far better, almost just as good as the Apple encoder, and will give you an excellent experience at 160kbps CBR.
 
 ## I don't care about storage and want really maximum quality
-You will get very little improvements by pushing harder than me the quality sliders. I am very close to the max supported by the technical specs of the product. For example, Apple recommend to never exceeds AAC at 160kbps (CBR). If you decide to push the sliders more, be prepared to encounter issues, and creates uncompatible files with some iPods (for example working files on iPod Classics but losing compatibility with the older iPod Videos).
+You will get very little improvements by pushing harder than me the quality sliders. I am very close to the max supported by the technical specs of the product. For example, Apple recommend to never exceeds AAC at 160kbps (CBR). If you decide to push the sliders more, be prepared to encounter issues, and to create uncompatible files with some iPods (for example working files on iPod Classics but losing compatibility with the older iPod Videos).
 Also keep the encoding speed of h264 at "medium", as "slow" and other different params are changing heavily the encoding logic which can also create issues.
 
 ## Why not use Handbrake 1.3 which contains the official Apple 240p preset ?
