@@ -47,7 +47,7 @@ You can now scroll down to the ```Handbrake guide part (common part)``` then do 
 2) Import your medias into the handbrake window
 3) For each media you've selected, before adding them into the waiting line:
 - Audio: Change the audio track to select the one that you want to use, that match the language that you want to use. Don't try to add another audio track, it will not work, because iPods can use only one audio track at once.
-- Subtitles: Change "Foreign audio scan" to "None" if you don't want any subtitle. If you want to use a subtitle track, select it, and subtitles will be automatically burn by handbrake into the video stream on the converted file.
+- Subtitles: Change "Foreign audio scan" to "None" if you don't want any subtitle. If you want to use a subtitle track, select it, and subtitles will be automatically burn by handbrake into the video stream of the converted file.
 4) Add the file to the waiting line. Now you can start convert. To add more files, repeat from step 3.
 5) Import your files into the TV app or into iTunes, then tag them manually according to your desires. Don't forget to select the correct type (TV Show, Movie, or Music clip).
 6) Ready to sync and play !
