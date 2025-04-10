@@ -82,7 +82,7 @@ You will get very little improvements by pushing harder than me the quality slid
 Also keep the encoding speed of h264 at "medium", as "slow" and other different params are changing heavily the encoding logic which can also create issues.
 
 ## Why not use Handbrake 1.3 which contains the official Apple 240p preset ?
-This version is obsolete and unsupported, which means it's going to have more and more issues with modern video input files. Also new versions encodes faster, or even way faster on Apple silicon macs.
+This version is obsolete and unsupported, which means it's going to have more and more issues with modern video input files. Also new versions encodes faster, or even way faster on Apple silicon macs. My profile was also tweaked to provide the best possible experience and to produce an high quality file for your iPod.
 
 ## What can I do with my purchased iTunes Store movies ?
 Downloaded movies/series from the iTunes Store will be encrypted with non-easily-removable anti-copy protections ; these protections also affects your freedom to downscale and reconvert the content freely to save disk space. 
