@@ -104,7 +104,7 @@ Links to an old and known working iTunes version:
 10.5) The screen should remain black from now. If not, retry until it does.
 11) iTunes will ask you to download a restore image. Accept.
 12) After a while, your iPod will appear back in iTunes. It's now time to time to SHIFT + Click on the ```Restore``` button on iTunes. A file browser will open, so it's time to choose the downloaded ```iPod_35.2.0.2.ipsw``` so you will restore your iPod to 2.0.2.
-13) After a while, your iPod will reboot and be ready to go on the 2.0.2 firmware. The Rockbox bootloader has been removed entirely through the restore process, so if you want Rockbox you must install the bootloader again.
+13) After a while, your iPod will reboot and be ready to go on its newer firmware. The Rockbox bootloader has been removed entirely through the restore process, so if you want Rockbox you must install the bootloader again.
 
 You can now use your iPod as normal, it is now on the 2.0.2 firmware. Don't update it to 2.0.4, use it as-it-is. Put some content, it's now where the usage of your music buddy starts, you've finished the hard work. Time to reward yourself with a drink, maybe ?
 
