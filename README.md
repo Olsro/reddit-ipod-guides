@@ -11,6 +11,8 @@ If you can and if you feel that my work deserves a few dollars, you can easily t
 # List of all available guides
 *Guides are ordered descendently by their release date.*
 
+[Larger (> 128GB) flashmods on any iPod Classic 6G Stock OS by flashing more recent firmwares](guides/ipod6g-flash-more-recent-firmwares.md)
+
 [Encoding 240p video content for your iPod Classic / iPod Video / iPod Nano 3G-5G](guides/ipod-encode-240p-video-content.md)
 
 [Apple Old Music Player Buyer and User Guide](guides/apple-oldmusicplayer-buyeruserguide.md)

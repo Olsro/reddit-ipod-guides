@@ -1,0 +1,184 @@
+From 2df1172e985c45e9bf7fe3283bbb42dfaa36c735 Mon Sep 17 00:00:00 2001
+From: Paul Sauro <olsroparadise@proton.me>
+Date: Wed, 2 Jul 2025 01:35:44 +0200
+Subject: [PATCH] ipod6g: add SysCFG flashing tools from the debug menu
+
+Change-Id: Ifdba47307f28e3ce829fe4bf4e8fd6bef6f20df8
+---
+ apps/debug_menu.c                             | 96 ++++++++++++++++++-
+ firmware/target/arm/s5l8702/norboot-s5l8702.c | 18 ++++
+ firmware/target/arm/s5l8702/norboot-target.h  |  1 +
+ 3 files changed, 111 insertions(+), 4 deletions(-)
+
+diff --git a/apps/debug_menu.c b/apps/debug_menu.c
+index b267930b12..7159b71648 100644
+--- a/apps/debug_menu.c
++++ b/apps/debug_menu.c
+@@ -2643,14 +2643,56 @@ static bool dbg_device_data(void)
+ 
+ 
+ #if defined(IPOD_6G) && !defined(SIMULATOR)
+-static bool dbg_syscfg(void) {
++static ssize_t syscfg_read_from_file(struct SysCfg* syscfg)
++{
++    int fd = open("/syscfg", O_RDONLY);
++    if (fd < 0)
++    {
++        splash(HZ*3, "Failed to open '/syscfg'");
++        return -1;
++    }
++
++    const size_t syscfg_hdr_size = sizeof(struct SysCfgHeader);
++    const size_t syscfg_entry_size = sizeof(struct SysCfgEntry);
++
++    read(fd, &syscfg->header, syscfg_hdr_size);
++
++    if (syscfg->header.magic != SYSCFG_MAGIC) {
++        close(fd);
++        return -1;
++    }
++
++    const size_t calculated_syscfg_size = syscfg_hdr_size + syscfg_entry_size * syscfg->header.num_entries;
++
++    if (syscfg->header.size != calculated_syscfg_size) {
++        close(fd);
++        return calculated_syscfg_size;
++    }
++
++    const size_t syscfg_num_entries = MIN(syscfg->header.num_entries, SYSCFG_MAX_ENTRIES);
++    const size_t syscfg_entries_size = syscfg_entry_size * syscfg_num_entries;
++
++    read(fd, &syscfg->entries, syscfg_entries_size);
++    close(fd);
++
++    return 0;
++}
++
++static bool dbg_syscfg(bool load_from_file, bool save_file, bool flash_to_nor) {
+     struct simplelist_info info;
+     struct SysCfg syscfg;
+ 
+-    simplelist_info_init(&info, "SysCfg NOR contents", 0, NULL);
++    if (load_from_file)
++        simplelist_info_init(&info, "SysCfg file contents", 0, NULL);
++    else
++        simplelist_info_init(&info, "SysCfg NOR contents", 0, NULL);
+     simplelist_reset_lines();
+ 
+-    const ssize_t result = syscfg_read(&syscfg);
++    ssize_t result;
++    if (load_from_file)
++        result = syscfg_read_from_file(&syscfg);
++    else
++        result = syscfg_read(&syscfg);
+ 
+     if (result == -1) {
+         simplelist_setline("SCfg magic not found");
+@@ -2712,8 +2754,51 @@ static bool dbg_syscfg(void) {
+         }
+     }
+ 
++    const size_t syscfg_hdr_size = sizeof(struct SysCfgHeader);
++    const size_t syscfg_entry_size = sizeof(struct SysCfgEntry);
++    if (!load_from_file && save_file)
++    {
++        int fd = creat("/syscfg", 0666);
++        if (fd >= 0)
++        {
++            write(fd, &syscfg.header, syscfg_hdr_size);
++            write(fd, &syscfg.entries, syscfg_entry_size * syscfg.header.num_entries);
++            close(fd);
++            simplelist_addline("Syscfg file has been saved !");
++        }
++    }
++    if (load_from_file && flash_to_nor)
++    {
++        uint8_t attempt = 0;
++        while (attempt < 10)
++        {
++            attempt++;
++            /* We need multiple attempts to flash it correctly 
++            From my tests, 2 attempts were always necessary */
++            if (syscfg_write(&syscfg))
++                break;
++        }
++        simplelist_addline("Syscfg file has been flashed to NOR in %d attempts !", attempt);
++    }
++
+     return simplelist_show_list(&info);
+ }
++
++static bool dbg_syscfg_from_file(void) {
++    return dbg_syscfg(true, false, false);
++}
++
++static bool dbg_syscfg_from_file_then_flash(void) {
++    return dbg_syscfg(true, false, true);
++}
++
++static bool dbg_syscfg_from_nor(void) {
++    return dbg_syscfg(false, false, false);
++}
++
++static bool dbg_syscfg_from_nor_save_to_file(void) {
++    return dbg_syscfg(false, true, false);
++}
+ #endif
+ 
+ /****** The menu *********/
+@@ -2832,7 +2917,10 @@ static const struct {
+ #endif
+ 
+ #if defined(IPOD_6G) && !defined(SIMULATOR)
+-        {"View SysCfg", dbg_syscfg },
++        {"View SysCfg (from NOR)", dbg_syscfg_from_nor },
++        {"View and save SysCfg (from NOR to file)", dbg_syscfg_from_nor_save_to_file },
++        {"View SysCfg (from file)", dbg_syscfg_from_file },
++        {"Flash SysCfg (from file to NOR)", dbg_syscfg_from_file_then_flash },
+ #endif
+ };
+ 
+diff --git a/firmware/target/arm/s5l8702/norboot-s5l8702.c b/firmware/target/arm/s5l8702/norboot-s5l8702.c
+index ebca2058e2..2a380bc8f5 100644
+--- a/firmware/target/arm/s5l8702/norboot-s5l8702.c
++++ b/firmware/target/arm/s5l8702/norboot-s5l8702.c
+@@ -234,6 +234,24 @@ ssize_t syscfg_read(struct SysCfg* syscfg)
+     return 0;
+ }
+ 
++bool syscfg_write(struct SysCfg* syscfg)
++{
++    const size_t syscfg_hdr_size = sizeof(struct SysCfgHeader);
++    const size_t syscfg_entry_size = sizeof(struct SysCfgEntry);
++    
++    bootflash_init(SPI_PORT);
++
++    bootflash_write(SPI_PORT, 0, &syscfg->header, syscfg_hdr_size);
++    bootflash_write(SPI_PORT, syscfg_hdr_size, &syscfg->entries, syscfg_entry_size * syscfg->header.num_entries);
++
++    bootflash_close(SPI_PORT);
++
++    /* Now we must verify that we can read it */
++    struct SysCfg syscfg_written;
++    ssize_t result = syscfg_read(&syscfg_written);
++    return (result == 0);
++}
++
+ /*
+  * IM3
+  */
+diff --git a/firmware/target/arm/s5l8702/norboot-target.h b/firmware/target/arm/s5l8702/norboot-target.h
+index b4688de8e3..4919774ac6 100644
+--- a/firmware/target/arm/s5l8702/norboot-target.h
++++ b/firmware/target/arm/s5l8702/norboot-target.h
+@@ -125,6 +125,7 @@ struct SysCfg {
+ #define SYSCFG_TAG_REGN 0x5265676e // Regn
+ 
+ ssize_t syscfg_read(struct SysCfg* syscfg);
++bool syscfg_write(struct SysCfg* syscfg);
+ 
+ /*
+  * IM3
+-- 
+2.39.5 (Apple Git-154)
+
