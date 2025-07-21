@@ -1,5 +1,5 @@
 # Encoding 240p video content for your iPod Classic / iPod Video / iPod Nano 3G-5G
-*Date: 03 April 2025, last edited: 10 April 2025*
+*Date: 03 April 2025, last edited: 21 July 2025*
 
 # Introduction
 I am obsessed about writing this guide since months, but just couldn't find a way to accomplish this task in a satisfying way even just for me. And since I don't want to mislead anyone, I preferred to wait until I could find a definitive workflow to share and to apply also to myself.
@@ -51,6 +51,8 @@ You can now scroll down to the ```Handbrake guide part (common part)``` then do 
 4) Add the file to the waiting line. Now you can start convert. To add more files, repeat from step 3.
 5) Import your files into the TV app or into iTunes, then tag them manually according to your desires. Don't forget to select the correct type (TV Show, Movie, or Music clip).
 6) Ready to sync and play !
+
+If your iPod is a Nano 3G+ or a Classic 6G+, you will want to set ```off``` on the ```Fit to Screen``` setting (```Videos --> Settings --> Fit to Screen```) to avoid watching zoomed-in content and keep the 1:1 aspect ratio from the converted file. This way, only 4:3 content will really fill the whole screen and you will have some black bars with anything else to preserve aspect ratio.
 
 # FAQ
 ## Why even use an iPod to play video content ?
