@@ -1,5 +1,5 @@
 # Encoding 240p video content for your iPod Classic / iPod Video / iPod Nano 3G-5G
-*Date: 03 April 2025, last edited: 21 July 2025*
+*Date: 03 April 2025, last edited: 22 July 2025*
 
 # Introduction
 I am obsessed about writing this guide since months, but just couldn't find a way to accomplish this task in a satisfying way even just for me. And since I don't want to mislead anyone, I preferred to wait until I could find a definitive workflow to share and to apply also to myself.
@@ -13,6 +13,8 @@ There's also multiple guides out there but I couldn't find any that could meet a
 - I don't want to rely on iTunes for this task because it's single threaded thus very slow. Also, iTunes requires mp4 containers as input which is another layer of annoyance.
 - The settings should encode fairly fast, I don't want to do two-pass encoding non senses.
 - I want something very simple to mass convert as fast as possible, and something that handle all special cases like HDR tone mapping etc to be able even to convert very modern content for the iPod.
+
+iPod for EvEr made a video guide out of this guide, feel free to check it out if you prefer video guides: https://www.youtube.com/watch?v=ozNKC5ISIks
 
 # Showcase
 *Warning: Convert only content you own !*
