@@ -1,5 +1,5 @@
 # Larger (> 128GB) flashmods on any iPod Classic 6G Stock OS by flashing more recent firmwares
-*Date: 09 July 2025, last edited: 09 July 2025*
+*Date: 09 July 2025, last edited: 24 August 2025*
 
 ![Alt text](ipod6g-flash-more-recent-firmwares/header.jpeg "Header")
 
@@ -28,7 +28,7 @@ Now that one week has passed, everything is open-sourced for everyone as I belie
 ### Real-world changelog for Apple firmwares and EU volume limit scientific testing
 *Based on my own experience in heavily testing them.*
 
-2.0.2: Add support for larger flashmods (> 128GB)
+2.0.2: Add support for larger flashmods (> 128GB). Some people reports better compatibility with USB wallplugs/powerbanks, and better FPS when using the CoverFlow.
 2.0.3: Add Genius mixes
 2.0.4: Some niche bug fixes, all documented by Apple (Fixed HE-AAC content playback / Fixed iTunes U content organization / Fixed truncated text in Genius Mixes)
 2.0.5: On EU-iPods, there's a new option to enforce the EU volume limit. There's also an alert the first time you increase the volume over the EU volume limit. This alert reset itself after a while, which will reset the volume limit under the EU restriction, and this can be annoying because it can happen during music playback.
@@ -41,6 +41,7 @@ So in contrary from all popular beliefs, 2.0.5 is the worse choice for an EU iPo
 - It should make your iPod Classic 6.0G sounding better. From my tests, it is sounding exactly like my later iPod Classics on the 2.0.2 firmware. It looks like bad sound also affected the iPod Nano 3G that used closely the same firmwares on 1.1.X. 6.5G was shipped with 2.0.1 so was not affected by this.
 - Larger flashmods will be supported. Enjoy up to 2TB of content if that's your desire ! =) But if you wanna be smart and cost-effective, I strongly advise you check my other guides to compress your music & videos with excellent perceptual quality.
 - Once the flashing process is applied fully, it is very stable and you can even use iTunes at any time later to restore your iPod again. There's no known broken features, everything should work as normal from my testing: videos playback, docking, remote controls, accessories (like the FM Radio Remote), music playback, syncing stuff, etc
+- Some people reports better compatibility with USB wallplugs/powerbanks, and better FPS when using the CoverFlow.
 
 ### Disadvantages of doing this
 - 2.0.2-2.0.4 firmwares requires at least iTunes 9 to sync. This can be a problem if you've planned to sync using a very old Mac, like a PowerPC G3 Mac that will be stuck to iTunes 8.
