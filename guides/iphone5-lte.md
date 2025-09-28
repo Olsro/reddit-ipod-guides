@@ -10,7 +10,7 @@ This guide is for enabling LTE (4G) even if your carrier did not support it on i
 * Best version of iOS to do this is 6.1.2. It's almost the same as 6.1.3 excepted a security patch in webkit (and security patches to block jailbreaking) and it is almost the same as 6.1.4 which contained only a patch to the speaker profile.
 * This guide should also work for the iPad Mini 1G/iPad 4 on iOS 6
 * It should work on Coolbooted/dualbooted iOS 6. My setup is tethered using Legacy iOS Kit.
-* Commcenter patch for iOS 6 : [https://workupload.com/file/tNQbUKLKK5Q](https://workupload.com/file/tNQbUKLKK5Q) (you can also find it in this Cydia repo : [http://beta.leimobile.com/repo/](http://beta.leimobile.com/repo/) )
+* Commcenter patch for iOS 6 : [iphone5-lte/jp.backspace.ios5.commcenter.patch_6.1r1-23_iphoneos-arm.deb](<iphone5-lte/jp.backspace.ios5.commcenter.patch_6.1r1-23_iphoneos-arm.deb>) (you can also find it in this Cydia repo : [http://beta.leimobile.com/repo/](http://beta.leimobile.com/repo/) )
 * iFile (on Cydia)
 * A SIM card should be inserted and unlocked. Your phone should be connected on the 2G/3G network of your carrier if possible (just so the symbolic link will be created to directly go to the right bundle of your carrier using iFile).
 
