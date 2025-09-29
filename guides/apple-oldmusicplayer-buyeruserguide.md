@@ -23,7 +23,8 @@ The last iPod models from the Clickwheel era.
 - Can play videos and be a pretty solid, fast, and reliable way to enjoy 4:3 and 16:9 contents on the go especially if you battery mod it.
 
 **Cons:**
-- iPod Classics 6G and 6.5G are limited to 128GB storage mods on Stock OS.
+- By default, iPod Classics 6G and 6.5G are limited to 128GB storage mods on Stock OS.
+  - This can be raised (> 128GB of storage) [by flashing newer firmwares, using this guide](https://github.com/Olsro/reddit-ipod-guides/blob/main/guides/ipod6g-flash-more-recent-firmwares.md).
 - More difficult to open compared to the iPod Video
 
 **Advices:**
