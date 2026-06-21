@@ -34,7 +34,21 @@ We are going to setup a powerful music convert environment here to mass (and in 
 	8) Now click on ```Back```; the new destination pattern should appear under the ```Destination``` clickable link. You can now ```Save <<``` your new preset with a custom name so you can re-use it anytime later (for example it can be: ```Apple AAC QuickTime```).
 	9) Now you can ```Load >>``` your preset anytime you want then click on the ```Convert``` button to start converting the music files into the destination folder of your choice.
 
-6. Then you can copy the converted files and import these on your favourite iTunes version. Or you can do everything within Foobar (x86 version only) by using this great plug-in : [https://yuo.be/ipod-manager](https://yuo.be/ipod-manager)
+6. Then you can copy the converted files and import these on your favourite iTunes version. Or you can do everything within Foobar (x86 version only) by using this great plug-in : [https://yuo.be/ipod-manager](https://yuo.be/ipod-manager). If going with this path, it's a good idea to configure the plugin to auto converts tracks before sending them to the iPod. That way, no needs of using iTunes to send the music and you won't have to convert it beforehand, the plugin will do everything for you! We just need some configuration. You need to provide the ```flac``` binaries for it to work in the same way as the conversion preset.
+	1) Download the ```flac``` binaries from the github repo: https://github.com/xiph/flac/releases/download/1.5.0/flac-1.5.0-win.zip.
+	2) Inside the ```flac-1.5.0-win/Win32``` folder, copy all 4 files to the ```C:\Program Files\foobar2000\encoders``` folder.
+	3) Click on ```Library``` then click on ```Configure```. On the left of this window, click on ```Tools```, ```iPod Manager``` then ```Conversion```.
+	4) Check the ```Convert audio track in unsupported formats```.
+	5) Click on ```Edit presets...``` under the ```Encoder set-up``` and ```Encoder preset``` section.
+	6) Click on ```New``` and call the encoder preset with a custom name, you can use ```Apple AAC QuickTime``` to keep consistency.
+	7) In the ```Executable:``` field, input the path of the ```qaac.exe``` file, it should be ```C:\Program Files\foobar2000\encoders\qaac.exe```
+	8) In the ```Parameters:``` field, input ```-v NUMBER - -o %d```. The ```NUMBER``` value is the one you have selected previously, ```128 kpbs```, ```160 kbps``` or ```96 kbps```. In this case, we want ```-v 160 - -o %d```.
+	9) In the ```File extension:``` field, input ```m4a```.
+	10) Click on ```Close``` button, it saves your newly created preset.
+	11) Under the ```Encoder set-up```, select ```Apple AAC QuickTime``` in the ```Encoder preset``` dropdown.
+	12) If you are using ```ReplayGain``` (Foobar2k works wonder to add it to your audio files), under the ```Encoder set-up```, select ```Calculate gain after encoding``` in the ```ReplayGain processing```. Because iPods don't support ```ReplayGain```, the plugin will neatly convert the values to the standard use by iPods, ```SoundCheck```. You can change which value you want to use in the ```Database``` page and the ```SoundCheck preference``` field. You can choose between ```Track gain``` or ```Album gain```.
+	13) Because iPods don't process tags in the same way as other playback devices (especially the ```Artist``` tag), you can map the correct Metadata. That way, when converting / sending music to you iPod, it will adapt the metadata to be correctly processed by the iPod. In the ```Database``` page, under the ```Metadata``` table, go to the line ```Artist``` and input to its ```Mapping``` field: ```%album artist%```.
+	14) Please note that iPods cannot process multi artist, therefore you'll have multiple entry with all artist configuration. It's not a big issue, but it's important to know this quirk.
 
 Recommended settings :
 
